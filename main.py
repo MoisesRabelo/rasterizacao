@@ -15,7 +15,7 @@ def rasterizar(reta, resolucao):
     y = y1
 
     m = 0
-    if deltaX != 0 and deltaY != 0:
+    if deltaX != 0:
         m = deltaY/deltaX
     
     b = y - m * x
