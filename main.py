@@ -68,10 +68,12 @@ if __name__ == '__main__':
         fig, figures = plt.subplots(ncols = 4, figsize = (15, 7))
         fig.suptitle("Resolução: {resolucao}".format(resolucao = resolucao[i]))
 
-        matriz = [rasterizar(reta1, resolucao[i]), rasterizar(reta2, resolucao[i]),
-                rasterizar(reta3, resolucao[i]), rasterizar(reta4, resolucao[i])]
+        matriz = [rasterizar(reta1, resolucao[i]), 
+                rasterizar(reta2, resolucao[i]),
+                rasterizar(reta3, resolucao[i]), 
+                rasterizar(reta4, resolucao[i])]
 
-        for figure in range(0, len(matriz)):
-            figures[figure].imshow(matriz[figure].T, cmap='PRGn_r')
+        for j in range(0, len(matriz)):
+            figures[j].imshow(matriz[j].T, cmap='PRGn_r', origin="lower")
 
     plt.show()
