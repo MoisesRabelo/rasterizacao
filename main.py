@@ -65,14 +65,13 @@ if __name__ == '__main__':
     resolucao = np.array([[100, 75], [600, 300], [800, 1200]])
 
     for i in range(len(resolucao)):
-        fig, figures = plt.subplots(ncols = 4, figsize = (15, 7), facecolor = 'lime')
+        fig, figures = plt.subplots(ncols = 4, figsize = (15, 7))
         fig.suptitle("Resolução: {resolucao}".format(resolucao = resolucao[i]))
 
         matriz = [rasterizar(reta1, resolucao[i]), rasterizar(reta2, resolucao[i]),
                 rasterizar(reta3, resolucao[i]), rasterizar(reta4, resolucao[i])]
 
         for figure in range(0, len(matriz)):
-            figures[figure].imshow(matriz[figure].T,
-                                cmap='PRGn_r')
+            figures[figure].imshow(matriz[figure].T, cmap='PRGn_r')
 
     plt.show()
