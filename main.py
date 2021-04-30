@@ -33,18 +33,14 @@ def rasterizar(reta, resolucao):
 
     if abs(deltaX) > abs(deltaY):
         for x in range(minX, maxX):
-            if deltaY != 0:
-                y = m * x + b
-            else:
-                y = y1
+            y = m * x + b
             xp, yp = produzFragmento(x, y)
             matriz[math.floor(xp)][math.floor(yp)] = 1
     else:
         for y in range(minY, maxY):
-            if deltaX != 0:
+            x = x1
+            if m != 0:
                 x = (y - b)/m
-            else:
-                x = x1
             xp, yp = produzFragmento(x, y)
             matriz[math.floor(xp)][math.floor(yp)] = 1
     return matriz
